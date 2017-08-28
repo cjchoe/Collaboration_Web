@@ -1,9 +1,13 @@
 import React from 'react';
 import * as THREE from 'three'
+<<<<<<< HEAD
 import { connect } from 'react-redux';
 
 
 import "./RenderWindow.css";
+=======
+import ReactResizeDetector from 'react-resize-detector';
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
 
 class E_RenderWindow extends React.Component{
   constructor(props){
@@ -11,6 +15,7 @@ class E_RenderWindow extends React.Component{
   }
 
   componentDidMount() {
+<<<<<<< HEAD
     //Append viewport
     let viewport = $("#viewport").get(0);
     viewport.appendChild(this.props.manager.renderer.domElement);
@@ -43,10 +48,23 @@ class E_RenderWindow extends React.Component{
     return(
         <div id="viewport"/>
 
+=======
+    this.refs.viewport.appendChild(this.props.Manager.renderer.domElement)
+  }
+
+  render(){
+    return(
+      <div>
+        <div ref="viewport">
+          <ReactResizeDetector handleWidth handleHeight onResize={this.props.Manager.OnResize.bind(this.props.Manager)}/>
+        </div>
+      </div>
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
     );
   }
 }
 
+<<<<<<< HEAD
 
 const mapStateToProps = (state) => {
     return {
@@ -57,3 +75,6 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps)(E_RenderWindow);
+=======
+export default E_RenderWindow;
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57

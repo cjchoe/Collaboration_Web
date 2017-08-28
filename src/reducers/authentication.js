@@ -17,7 +17,12 @@ const initialState = {
         isLoggedIn: false,
         currentUser: '',
     },
+<<<<<<< HEAD
     manager: Manager
+=======
+    manager: Manager,
+    socket: io()
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
 };
 
 export default function authentication(state, action) {

@@ -14,15 +14,23 @@ var ServerSocketManager = function () {
 
     this.io = require('socket.io').listen(server, { 'forceNew': true });
     console.log('socket server opened');
+<<<<<<< HEAD
+=======
+
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
     this.HandleSignal();
   }
 
   _createClass(ServerSocketManager, [{
     key: 'HandleSignal',
     value: function HandleSignal() {
+<<<<<<< HEAD
       var that = this;
       this.io.sockets.on('connection', function (socket) {
         this.getSocket = socket;
+=======
+      this.io.sockets.on('connection', function (socket) {
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
         //Initialize Chat
         console.log("New Connection!!");
         console.log(socket.handshake.address);
@@ -30,6 +38,10 @@ var ServerSocketManager = function () {
         socket.emit('SIGNAL_JOIN', socket.id);
         socket.broadcast.emit('SIGNAL_JOIN', socket.id); // 모두에게 접속 알린다.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
         socket.on('SIGNAL_GENIUS', function (data) {
           console.log(data);
         });
@@ -39,6 +51,7 @@ var ServerSocketManager = function () {
           socket.emit('SIGNAL_CHAT', data);
           socket.broadcast.emit('SIGNAL_CHAT', data);
         });
+<<<<<<< HEAD
 
         socket.on('SIGNAL_MFC_COORDINATION', function (data) {
           // let jsonData = JSON.parse(data);
@@ -67,6 +80,8 @@ var ServerSocketManager = function () {
           socket.broadcast.emit("SIGNAL_GET_FILE",that.data);
           console.log("come");
         };*/
+=======
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
       });
     }
   }]);

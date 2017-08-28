@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import { connect } from 'react-redux';
+=======
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
 
 class Header extends React.Component {
 
@@ -10,7 +13,11 @@ class Header extends React.Component {
   }
 
   componentDidMount(){
+<<<<<<< HEAD
     $(".button-collapse").sideNav({closeOnClick: true});
+=======
+    $(".button-collapse").sideNav();
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
   }
 
 
@@ -23,6 +30,7 @@ class Header extends React.Component {
                 </Link>
 
         );
+<<<<<<< HEAD
     const logoutButton = (
 
             <Link to ='/'>
@@ -71,14 +79,45 @@ class Header extends React.Component {
 
                   <div className="left">
                       <ul className="hide-on-med-and-down">
+=======
+        const logoutButton = (
+
+                  <a onClick={this.props.onLogout}>
+                      <i className="material-icons">lock_open</i>
+                  </a>
+
+          );
+      return (
+          <nav>
+              <div className="nav-wrapper black darken-1">
+                  <Link to="/" className="brand-logo center">Collaboration</Link>
+                  <Link to="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></Link>
+
+                  <div className="left">
+
+                      <ul className="left hide-on-med-and-down">
                         <li>
                             <Link to ="/render" className="btn waves-effect waves-light teal lighten-1">shapes<i className="material-icons right">palette</i></Link>
                         </li>
                         <li>
+                            <Link to ="/collabo" className="btn waves-effect waves-light teal lighten-1">Collabo<i className="material-icons right">people_outline</i></Link>
+                        </li>
+                      </ul>
+
+                      <ul className="side-nav" id="mobile-demo">
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
+                        <li>
+                            <Link to ="/render" className="btn waves-effect waves-light teal lighten-1">shapes<i className="material-icons right">palette</i></Link>
+                        </li>
+                        <li>
+<<<<<<< HEAD
                           <ul>{this.props.isLoggedIn == true?
                             <Link to ="/collabo" className="btn waves-effect waves-light teal lighten-1">Collabo<i className="material-icons right">people_outline</i></Link>
                             : <Link to ="/" className="btn waves-effect waves-light teal lighten-1">Login First<i className="material-icons right">notifications</i></Link>}
                           </ul>
+=======
+                            <Link to ="/collabo" className="btn waves-effect waves-light teal lighten-1">Collabo<i className="material-icons right">people_outline</i></Link>
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
                         </li>
                       </ul>
                   </div>

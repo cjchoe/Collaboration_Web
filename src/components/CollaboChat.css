@@ -1,11 +1,16 @@
 #chatlog{
+<<<<<<< HEAD
   background-color: #A0A0FA;
+=======
+  resize:none;
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
   padding:5px;
 	line-height: 30px;
 	border-radius:5px;
 	overflow-y: scroll;
 	border:1px solid #CCC;
 	margin-top:10px;
+<<<<<<< HEAD
   height: 250px;
 	text-align:left;
 	bottom:0;
@@ -16,3 +21,9 @@
   margin:10;
 
 }
+=======
+	height:250px;
+	text-align:left;
+	bottom:0;
+}
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57

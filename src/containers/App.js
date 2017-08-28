@@ -2,9 +2,16 @@ import React from 'react';
 //import LoginWindow from './Login';
 //import E_RenderWindow from './RenderWindow';
 //import E_Manager from '../Managers/E_Manager';
+<<<<<<< HEAD
 import {Header, MainBackground } from 'components';
 import { connect } from 'react-redux';
 import { getStatusRequest, logoutRequest } from 'actions/authentication';
+=======
+import {Header, BodyContent, MainBackground } from 'components';
+import { connect } from 'react-redux';
+import { getStatusRequest, logoutRequest } from 'actions/authentication';
+import Home from "./Home";
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
 
 
 class App extends React.Component {
@@ -82,6 +89,10 @@ class App extends React.Component {
             <div>
                 {isAuth ? undefined : <Header isLoggedIn={this.props.status.isLoggedIn}
                 onLogout={this.handleLogout} />}
+<<<<<<< HEAD
+=======
+                <MainBackground/>
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
             </div>
 
         );
@@ -106,4 +117,38 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
+<<<<<<< HEAD
+=======
+/*
+class App extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.Manager = new E_Manager();
+  }
+
+  render(){
+    return(
+      <div>
+        <h1> EJ Shim </h1>
+        <LoginWindow/>
+
+        <button onClick={this.Manager.OnClickCube.bind(this.Manager)}> Cube </button>
+
+        <button onClick={this.Manager.OnClickSphere.bind(this.Manager)}> Sphere </button>
+
+        <button onClick={this.Manager.OnClickTorus.bind(this.Manager)}> Torus </button>
+
+        <button onClick={this.Manager.DoAnimate.bind(this.Manager)}> Animate </button>
+
+
+        <button onClick={this.Manager.CancelAnimate.bind(this.Manager)}>Stop </button>
+
+        <E_RenderWindow Manager={this.Manager} value = {10}/>
+      </div>
+    )
+  }
+}*/
+
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
 export default connect(mapStateToProps, mapDispatchToProps)(App);

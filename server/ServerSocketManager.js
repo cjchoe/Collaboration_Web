@@ -2,6 +2,7 @@ class ServerSocketManager{
   constructor(server){
     this.io = require('socket.io').listen(server, {'forceNew':true });
     console.log('socket server opened')
+<<<<<<< HEAD
     this.HandleSignal();
   }
 
@@ -9,6 +10,16 @@ class ServerSocketManager{
     let that = this;
     this.io.sockets.on('connection', function(socket){
       this.getSocket = socket;
+=======
+
+    this.HandleSignal();
+
+  }
+
+
+  HandleSignal(){
+    this.io.sockets.on('connection', function(socket){
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
       //Initialize Chat
       console.log("New Connection!!");
       console.log(socket.handshake.address);
@@ -16,6 +27,10 @@ class ServerSocketManager{
       socket.emit('SIGNAL_JOIN', socket.id)
       socket.broadcast.emit('SIGNAL_JOIN', socket.id) // 모두에게 접속 알린다.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
       socket.on('SIGNAL_GENIUS', function(data){
         console.log(data);
       });
@@ -27,6 +42,7 @@ class ServerSocketManager{
       });
 
 
+<<<<<<< HEAD
       socket.on('SIGNAL_MFC_COORDINATION', function(data){
         // let jsonData = JSON.parse(data);
         // console.log(jsonData)
@@ -59,6 +75,10 @@ class ServerSocketManager{
     });
   }
 
+=======
+    });
+  }
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
 }
 
 export default ServerSocketManager;

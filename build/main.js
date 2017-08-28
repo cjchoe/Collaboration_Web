@@ -32,6 +32,7 @@ var _ServerSocketManager = require('./ServerSocketManager');
 
 var _ServerSocketManager2 = _interopRequireDefault(_ServerSocketManager);
 
+<<<<<<< HEAD
 var _socket = require('socket.io');
 
 var _socket2 = _interopRequireDefault(_socket);
@@ -51,6 +52,12 @@ var _gridfsStream2 = _interopRequireDefault(_gridfsStream);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //import Login from '../src/containers';
+=======
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//import Login from '../src/containers';
+
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
 // PARSE HTML BODY
 
 //import posts from './routes/posts'
@@ -62,6 +69,7 @@ var port = 3000;
 var db = _mongoose2.default.connection;
 db.on('error', console.error);
 db.once('open', function () {
+<<<<<<< HEAD
     console.log('Connected to mongodb server');
 });
 // mongoose.connect('mongodb://username:password@host:port/database=');
@@ -79,10 +87,44 @@ var gfs = (0, _gridfsStream2.default)(db.db);
 // app.use(morgan('dev'));
 app.use(_bodyParser2.default.json());
 
+=======
+  console.log('Connected to mongodb server');
+});
+// mongoose.connect('mongodb://username:password@host:port/database=');
+_mongoose2.default.connect('mongodb://localhost/codelab');
+
+/* use session */
+app.use((0, _expressSession2.default)({
+  secret: 'CodeLab1$1$234',
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use((0, _morgan2.default)('dev'));
+app.use(_bodyParser2.default.json());
+
+// app.post('/foweij')
+// app.use('/', function(req, res){
+//   return res.send("asdfasdf")
+// })
+// app.use('/hello',(req,res)=>{
+//   res.render(__dirname+'../public/index.html');
+// });
+
+/*
+app.get('/hello', (req, res) => {
+  //res.send('<h1>Can you hear me?<h1>');
+  res.send(__dirname + '../public/index.html');
+});*/
+
+//app.use('/posts', posts);
+
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
 app.use('/', _express2.default.static(__dirname + '/../public'));
 
 app.use('/api', _routes2.default);
 
+<<<<<<< HEAD
 app.get('/foo/:filename', function (req, res) {
     console.log("you got food");
     console.log(req.filename);
@@ -158,4 +200,25 @@ app.get('/file/:filename', function (req, res) {
 /* support client-side routing */
 app.get('*', function (req, res) {
     res.sendFile(_path2.default.resolve(__dirname, './../public/index.html'));
+=======
+//app.use('/login', Login);
+
+/* support client-side routing */
+app.get('*', function (req, res) {
+  res.sendFile(_path2.default.resolve(__dirname, './../public/index.html'));
+});
+
+app.use(function (err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+}); // 에러 처리
+
+
+//Open Server
+//function(param1, function()...)  파라미터로 들어가는 function 은 callback  함수로, 순서로 시작, function() 대신 ()=> 형태로 씀.
+var server = app.listen(port, function () {
+  console.log('Express listening on port', port);
+
+  new _ServerSocketManager2.default(server);
+>>>>>>> a06aeab85aebcf4f943d6a6538015100e70e4d57
 });
