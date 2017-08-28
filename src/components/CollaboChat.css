@@ -1,0 +1,18 @@
+#chatlog{
+  background-color: #A0A0FA;
+  padding:5px;
+	line-height: 30px;
+	border-radius:5px;
+	overflow-y: scroll;
+	border:1px solid #CCC;
+	margin-top:10px;
+  height: 250px;
+	text-align:left;
+	bottom:0;
+}
+/*A0A0FA*/
+
+.container{
+  margin:10;
+
+}
